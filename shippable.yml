@@ -1,6 +1,19 @@
 #Language
 language: php
-
+services:
+ # - cassandra 
+ # - elasticsearch 
+ # - memcached 
+ # - mongodb 
+  - mysql 
+ # - neo4j 
+  - postgres 
+ # - rabbitmq 
+ # - redis 
+  - selenium 
+ # - sqlite 
+ # - couchdb 
+  - rethinkdb 
 #Version number
 php:
   #- 5.4 This is not supported in new image
@@ -17,3 +30,7 @@ build:
     
   ci:
     - php --version
+    - echo $SHIPPABLE_MYSQL_BINARY
+    - echo $SHIPPABLE_POSTGRES_BINARY
+    - echo $SHIPPABLE_SELENIUM_BINARY
+    - echo $SHIPPABLE_RETHINKDB_BINARY
